@@ -1,0 +1,17 @@
+{
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "eslint.nodePath": ".yarn/sdks",
+  "eslint.validate": [ "javascript", "typescript" ],
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "editor.rulers": [
+    80,
+    100,
+    120
+  ],
+  "editor.tabSize": 2,
+  "files.eol": "\n"
+}
