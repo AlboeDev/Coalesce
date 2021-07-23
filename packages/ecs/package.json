@@ -1,0 +1,52 @@
+{
+  "name": "@coalesce/ecs",
+  "version": "0.0.0",
+  "description": "Coalesce ECS",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "author": "Alboe Development",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlboeDev/Coalesce/issues"
+  },
+  "homepage": "https://github.com/AlboeDev/Coalesce/packages/ecs/#readme",
+  "scripts": {
+    "build": "yarn dist && yarn docs",
+    "clean": "yarn dist:clean && yarn docs:clean",
+    "dist": "yarn dist:clean && yarn dist:build",
+    "dist:build": "tsc",
+    "dist:clean": "rimraf ./dist",
+    "dist:validate": "tsc --noemit",
+    "dist:watch": "tsc --watch",
+    "docs": "yarn docs:clean && yarn docs:extract && yarn docs:generate",
+    "docs:build": "npm run docs:extract && npm run docs:generate",
+    "docs:clean": "rimraf ./docs",
+    "docs:extract": "api-extractor run -c ./config/api-extractor/api-extractor.json",
+    "docs:generate": "api-documenter markdown -i ./docs/temp -o ./docs",
+    "src:lint": "eslint -c ./.eslintrc.js ./src/**/*.*",
+    "src:test": "jest ./src/**/*.test.*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-typescript": "^7.14.5",
+    "@microsoft/api-documenter": "^7.13.33",
+    "@microsoft/api-extractor": "^7.18.4",
+    "@rollup/plugin-typescript": "^8.2.3",
+    "@types/jest": "^26.0.24",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-jsdoc": "^35.5.1",
+    "jest": "^27.0.6",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.53.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.3.5"
+  }
+}
